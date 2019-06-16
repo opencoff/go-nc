@@ -1,2 +1,2 @@
-github.com/ogier/pflag v0.0.1 h1:RW6JSWSu/RkSatfcLtogGfFgpim5p7ARQ10ECk5O750=
-github.com/ogier/pflag v0.0.1/go.mod h1:zkFki7tvTa0tafRvTBIZTvzYyAu6kQhPZFnshFFPE+g=
+github.com/opencoff/pflag v0.1.0 h1:EfNPbFYhhw2Cco+eotpExccNzgmdpU1LSzleVxe2QAQ=
+github.com/opencoff/pflag v0.1.0/go.mod h1:mTLzGGUGda1Av3d34iAJlh0JIlRxmFZtmc6qoWPspK0=

@@ -13,7 +13,7 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"fmt"
-	flag "github.com/ogier/pflag"
+	flag "github.com/opencoff/pflag"
 	"io"
 	"net"
 	"os"
@@ -36,6 +36,11 @@ var bufsiz int = 4 * 1048576
 
 func main() {
 
+	flag.Usage = func() {
+		fmt.Fprintf(flag.Output(), "Usage: %s [options] server:port\nOptions: (defaults in '[ ]')\n", os.Args[0])
+		flag.PrintDefaults()
+	}
+
 	flag.Parse()
 	args := flag.Args()
 	if len(args) < 1 {
@@ -43,14 +48,12 @@ func main() {
 	}
 
 	addr := args[0]
-
 	n_ch := 1
 	if *f_bidir {
 		n_ch += 1
 	}
 
 	ch := make(chan retval, n_ch)
-
 	var conn net.Conn
 	var err error
 
