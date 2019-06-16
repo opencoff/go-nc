@@ -1,14 +1,10 @@
-pwd = $(shell pwd)
-GOPATH := $(pwd)/vendor:$(pwd)
-export GOPATH
+
+.PHONY: all clean realclean
 
 all:
-	mkdir -p bin
-	go build -o bin/gonc .
+	-mkdir -p bin
+	go build -o bin/gonc
 
-clean:
+realclean clean:
 	rm -f bin/gonc
-
-realclean: clean
-	rm -rf vendor
 
